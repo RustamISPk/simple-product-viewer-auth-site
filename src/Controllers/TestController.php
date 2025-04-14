@@ -3,6 +3,7 @@
 namespace Autodeal\Controllers;
 
 use Autodeal\Presentation\templates\AbstractRender;
+use Autodeal\Presentation\templates\SignIn\SignInRender;
 use Autodeal\Repositories\ProductsRepository;
 use Autodeal\Repositories\UsersRepository;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +14,7 @@ class TestController extends AbstractController
 {
     public function __construct(private readonly Request         $request,
                                 private readonly UsersRepository $usersRepository,
-                                private readonly AbstractRender $renderMent)
+                                private readonly SignInRender $renderMent)
     {
         parent::__construct($this->request, $this->usersRepository);
     }
@@ -22,9 +23,13 @@ class TestController extends AbstractController
         return new JsonResponse(["response" => "hello world"]);
     }
 
+//    public function test2(): JsonResponse {
+//        $a = new ProductsRepository();
+//        return new JsonResponse($a->getProductsByPage(10));
+//    }
     public function test2(): JsonResponse {
-        $a = new ProductsRepository();
-        return new JsonResponse($a->getProductsByPage(10));
+        $dbData = $this->usersRepository->checkUserPassword('admin', 'admin');
+        return new JsonResponse([$dbData]);
     }
     public function test3(): JsonResponse {
         $a = new UsersRepository();

@@ -3,8 +3,6 @@ namespace Autodeal\Models;
 
 class AuthModel {
     public function __construct()
-    {
-
-    }
+    {}
 
 }

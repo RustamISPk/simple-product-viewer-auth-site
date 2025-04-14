@@ -19,10 +19,9 @@ abstract class AbstractRepository implements RepositoryInterface
         return $stmt->fetchAll();
     }
 
-    public function findByAttribute(mixed $param, string $attribute) : array {
-        $stmt = $this->connection->prepare("SELECT * FROM $this->tableName WHERE $attribute = :param");
-        $stmt->execute(['attribute' => $param]);
+    public function findByAttribute(mixed $param, string $attribute): array {
+        $stmt = $this->connection->prepare("SELECT * FROM {$this->tableName} WHERE {$attribute} = :param");
+        $stmt->execute(['param' => $param]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
 }

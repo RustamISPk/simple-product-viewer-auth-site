@@ -3,13 +3,17 @@
 namespace Autodeal\Presentation\templates\SignUp;
 
 use Autodeal\Presentation\templates\AbstractRender;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 class SignUpRender extends AbstractRender
 {
-    protected string $template = 'sign_in.twig';
+    protected string $templateName = 'sign_up.twig';
+    protected string $path = BASE_DIR . '/src/Presentation/templates/SignUp/';
+
     public function __construct()
     {
-        $path = BASE_DIR . '/src/Presentation/templates/SignIn'; // полный путь к папке
-        parent::__construct($path);
+        $this->twig = new Environment(new FilesystemLoader($this->getPath()));
+        parent::__construct($this->getPath());
     }
 }
