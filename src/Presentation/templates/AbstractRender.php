@@ -1,17 +1,15 @@
 <?php declare(strict_types = 1);
 
-namespace Autodeal\Presentation\templates;
+namespace ProductViewer\Presentation\templates;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Loader\FilesystemLoader;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
-//include '../../../bootstrap.php';
 
-abstract class AbstractRender
+abstract class AbstractRender implements RenderInterface
 {
     protected string $path = BASE_DIR . '/src/Presentation/templates/';
 
@@ -23,8 +21,13 @@ abstract class AbstractRender
 
     protected $twig;
 
-    public function __construct() {
-        $this->twig = new Environment(new FilesystemLoader($this->path));
+    public function __construct(string $path = null)
+    {
+        if ($path !== null) {
+            $this->path = $path;
+        }
+        $this->twig = new Environment(new FilesystemLoader([$this->getPath(), $this->getPath().'/../']));
+
     }
     /**
      * @throws SyntaxError

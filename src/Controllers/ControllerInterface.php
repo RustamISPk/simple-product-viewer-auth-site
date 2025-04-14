@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Autodeal\Controllers;
+namespace ProductViewer\Controllers;
 
 use Symfony\Component\HttpFoundation\Response;
 

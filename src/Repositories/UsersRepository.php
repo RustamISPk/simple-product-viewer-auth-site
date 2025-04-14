@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Autodeal\Repositories;
+namespace ProductViewer\Repositories;
 
 class UsersRepository extends AbstractRepository
 {

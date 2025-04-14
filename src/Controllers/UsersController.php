@@ -1,10 +1,11 @@
 <?php declare(strict_types = 1);
 
-namespace Autodeal\Controllers;
+namespace ProductViewer\Controllers;
 
-use Autodeal\Presentation\templates\SignIn\SignInRender;
-use Autodeal\Presentation\templates\SignUp\SignUpRender;
-use Autodeal\Repositories\UsersRepository;
+use ProductViewer\Presentation\templates\SignIn\SignInRender;
+use ProductViewer\Presentation\templates\SignUp\SignUpRender;
+use ProductViewer\Repositories\UsersRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -22,15 +23,27 @@ class UsersController extends AbstractController
     {
         return $this->render->renderTemplate();
     }
-
-    public function showWrognData(): Response
-    {
-        return $this->render->renderTemplate(['check' => false]);
-    }
     
     public function showReg(): Response
     {
-        return $this->render->renderTemplate();
+        return $this->signUpRender->renderTemplate();
     }
 
+    public function signIn(): JsonResponse {
+        $formData = [
+          'login' => $this->request->get('login'),
+          'password' => $this->request->get('password'),
+        ];
+
+        $dbData = $this->usersRepository->checkUserPassword($formData['login'], $formData['password']);
+        return new JsonResponse(['success' => $dbData]);
+    }
+
+    public function signUp(): void {
+        $formData = [
+            'login' => $this->request->get('login'),
+            'password' => $this->request->get('password'),
+        ];
+        $this->usersRepository->addUser($formData['login'], $formData['password']);
+    }
 }

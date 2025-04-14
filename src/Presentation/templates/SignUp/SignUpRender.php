@@ -1,14 +1,19 @@
 <?php declare(strict_types = 1);
 
-namespace Autodeal\Presentation\templates\SignUp;
+namespace ProductViewer\Presentation\templates\SignUp;
 
-use Autodeal\Presentation\templates\AbstractRender;
+use ProductViewer\Presentation\templates\AbstractRender;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 class SignUpRender extends AbstractRender
 {
-    protected string $template = 'sign_in.twig';
+    protected string $templateName = 'sign_up.twig';
+    protected string $path = BASE_DIR . '/src/Presentation/templates/SignUp/';
+
     public function __construct()
     {
-        parent::__construct();
+        $this->twig = new Environment(new FilesystemLoader($this->getPath()));
+        parent::__construct($this->getPath());
     }
 }

@@ -1,13 +1,13 @@
 {
-    "name": "autodeal/database",
+    "name": "product-viewer/reg-auth-forms",
     "autoload": {
         "psr-4": {
-            "Autodeal\\": "src/"
+            "ProductViewer\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Rustam, Anton, Egor"
+            "name": "Rustamr"
         }
     ],
     "require-dev": {

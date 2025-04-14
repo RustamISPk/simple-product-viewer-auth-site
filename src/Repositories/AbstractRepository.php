@@ -1,6 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace Autodeal\Repositories;
+namespace ProductViewer\Repositories;
 
 use PDO;
 
@@ -19,10 +19,12 @@ abstract class AbstractRepository implements RepositoryInterface
         return $stmt->fetchAll();
     }
 
-    public function findByAttribute(mixed $param, string $attribute) : array {
-        $stmt = $this->connection->prepare("SELECT * FROM $this->tableName WHERE $attribute = :param");
-        $stmt->execute(['attribute' => $param]);
+    public function findByAttribute(mixed $param, string $attribute): array {
+        $stmt = $this->connection->prepare("SELECT * FROM {$this->tableName} WHERE {$attribute} = :param");
+        $stmt->execute(['param' => $param]);
+        if (empty($stmt->fetch(PDO::FETCH_ASSOC))) {
+            return [];
+        }
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
 }

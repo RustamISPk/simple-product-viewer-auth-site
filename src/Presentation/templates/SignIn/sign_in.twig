@@ -1,5 +1,5 @@
 {% extends 'base.twig' %}
-{% block content %}
+{% block body %}
 <script>
     if (localStorage.getItem('sidebar-expanded') == 'true') {
         document.querySelector('body').classList.add('sidebar-expanded');
@@ -45,7 +45,7 @@
 
                     <h1 class="text-3xl text-slate-800 font-bold mb-6">Welcome back! ✨</h1>
                     <!-- Form -->
-                    <form class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+                    <form id="loginForm" class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
                         <div class="space-y-6">
                             <div>
                                 <label class="block text-base font-semibold mb-2" for="login">Login</label>
@@ -56,11 +56,12 @@
                                 <input id="password" class="form-input w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="password" autocomplete="on" placeholder="Enter your password">
                             </div>
                         </div>
+                        <button class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400" type="submit">Sign in</button>
                     </form>
                     <!-- Footer -->
                     <div class="pt-5 mt-6 border-t border-slate-200">
                         <div class="text-sm">
-                            Don’t you have an account? <a class="font-medium text-indigo-500 hover:text-indigo-600" href="signup.html">Sign Up</a>
+                            Don’t you have an account? <a class="font-medium text-indigo-500 hover:text-indigo-600" href="/register">Sign Up</a>
                         </div>
                         <!-- Warning -->
                         <div class="mt-5">
@@ -86,5 +87,48 @@
 
     </div>
 
+    <script> document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('loginForm');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const login = document.getElementById('login').value;
+                const password = document.getElementById('password').value;
+                console.log(login, password)
+
+                if (!login || !password) {
+                    alert('Both fields are required!');
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('login', login);
+                formData.append('password', password);
+
+                fetch('/login_check', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json',
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.success) {
+                            alert('Login successful!');
+                            // window.location.href = '/';
+                        } else {
+                            alert('Login failed: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred. Please try again.' + error);
+                    });
+            });
+        });</script>
+
 </main>
-{% endblock content %}
+{% endblock body %}

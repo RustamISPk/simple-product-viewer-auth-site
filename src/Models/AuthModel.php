@@ -1,10 +1,8 @@
 <?php declare(strict_types=1);
-namespace Autodeal\Models;
+namespace ProductViewer\Models;
 
 class AuthModel {
     public function __construct()
-    {
-
-    }
+    {}
 
 }
