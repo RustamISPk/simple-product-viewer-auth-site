@@ -10,3 +10,4 @@ $container->delegate(new ReflectionContainer(true));
 $container->add(Request::class, function () {
     return Request::createFromGlobals();
 });
+
