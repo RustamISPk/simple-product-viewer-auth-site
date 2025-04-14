@@ -615,7 +615,7 @@ class FrameworkExtension extends Extension
         $container->registerForAutoconfiguration(DataCollectorInterface::class)
             ->addTag('data_collector');
         $container->registerForAutoconfiguration(FormTypeInterface::class)
-            ->addTag('form.type');
+            ->addTag('form.type', ['csrf_token_id' => '%.form.type_extension.csrf.token_id%']);
         $container->registerForAutoconfiguration(FormTypeGuesserInterface::class)
             ->addTag('form.type_guesser');
         $container->registerForAutoconfiguration(FormTypeExtensionInterface::class)
@@ -777,9 +777,7 @@ class FrameworkExtension extends Extension
             $container->setParameter('form.type_extension.csrf.enabled', true);
             $container->setParameter('form.type_extension.csrf.field_name', $config['form']['csrf_protection']['field_name']);
             $container->setParameter('form.type_extension.csrf.field_attr', $config['form']['csrf_protection']['field_attr']);
-
-            $container->getDefinition('form.type_extension.csrf')
-                ->replaceArgument(7, $config['form']['csrf_protection']['token_id']);
+            $container->setParameter('.form.type_extension.csrf.token_id', $config['form']['csrf_protection']['token_id']);
         } else {
             $container->setParameter('form.type_extension.csrf.enabled', false);
         }
@@ -1948,23 +1946,13 @@ class FrameworkExtension extends Extension
             $container->setParameter('serializer.default_context', $defaultContext);
         }
 
-        if (!$container->hasDefinition('serializer.normalizer.object')) {
-            return;
-        }
-
-        $arguments = $container->getDefinition('serializer.normalizer.object')->getArguments();
-        $context = $arguments[6] ?? $defaultContext;
-
-        if (isset($config['circular_reference_handler']) && $config['circular_reference_handler']) {
-            $context += ['circular_reference_handler' => new Reference($config['circular_reference_handler'])];
-            $container->getDefinition('serializer.normalizer.object')->setArgument(5, null);
+        if ($config['circular_reference_handler'] ?? false) {
+            $container->setParameter('.serializer.circular_reference_handler', $config['circular_reference_handler']);
         }
 
         if ($config['max_depth_handler'] ?? false) {
-            $context += ['max_depth_handler' => new Reference($config['max_depth_handler'])];
+            $container->setParameter('.serializer.max_depth_handler', $config['max_depth_handler']);
         }
-
-        $container->getDefinition('serializer.normalizer.object')->setArgument(6, $context);
 
         $container->getDefinition('serializer.normalizer.property')->setArgument(5, $defaultContext);
 
@@ -2258,13 +2246,17 @@ class FrameworkExtension extends Extension
         $transportRateLimiterReferences = [];
         foreach ($config['transports'] as $name => $transport) {
             $serializerId = $transport['serializer'] ?? 'messenger.default_serializer';
+            $tags = [
+                'alias' => $name,
+                'is_failure_transport' => \in_array($name, $failureTransports, true),
+            ];
+            if (str_starts_with($transport['dsn'], 'sync://')) {
+                $tags['is_consumable'] = false;
+            }
             $transportDefinition = (new Definition(TransportInterface::class))
                 ->setFactory([new Reference('messenger.transport_factory'), 'createTransport'])
                 ->setArguments([$transport['dsn'], $transport['options'] + ['transport_name' => $name], new Reference($serializerId)])
-                ->addTag('messenger.receiver', [
-                    'alias' => $name,
-                    'is_failure_transport' => \in_array($name, $failureTransports, true),
-                ])
+                ->addTag('messenger.receiver', $tags)
             ;
             $container->setDefinition($transportId = 'messenger.transport.'.$name, $transportDefinition);
             $senderAliases[$name] = $transportId;
@@ -2668,7 +2660,6 @@ class FrameworkExtension extends Extension
         }
         $transports = $config['dsn'] ? ['main' => $config['dsn']] : $config['transports'];
         $container->getDefinition('mailer.transports')->setArgument(0, $transports);
-        $container->getDefinition('mailer.default_transport')->setArgument(0, current($transports));
 
         $mailer = $container->getDefinition('mailer.mailer');
         if (false === $messageBus = $config['message_bus']) {

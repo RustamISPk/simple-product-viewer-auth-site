@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace League\Container\Inflector;
 
@@ -14,31 +12,47 @@ class InflectorAggregate implements InflectorAggregateInterface
     /**
      * @var Inflector[]
      */
-    protected array $inflectors = [];
+    protected $inflectors = [];
 
-    public function add(string $type, ?callable $callback = null): Inflector
+    /**
+     * {@inheritdoc}
+     */
+    public function add(string $type, callable $callback = null) : Inflector
     {
-        $inflector = new Inflector($type, callback: $callback);
+        $inflector          = new Inflector($type, $callback);
         $this->inflectors[] = $inflector;
+
         return $inflector;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function getIterator() : Generator
+    {
+        $count = count($this->inflectors);
+
+        for ($i = 0; $i < $count; $i++) {
+            yield $this->inflectors[$i];
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function inflect($object)
     {
-        foreach ($this as $inflector) {
+        foreach ($this->getIterator() as $inflector) {
             $type = $inflector->getType();
 
-            if ($object instanceof $type) {
-                $inflector->setContainer($this->getContainer());
-                $inflector->inflect($object);
+            if (! $object instanceof $type) {
+                continue;
             }
+
+            $inflector->setLeagueContainer($this->getLeagueContainer());
+            $inflector->inflect($object);
         }
 
         return $object;
-    }
-
-    public function getIterator(): Generator
-    {
-        yield from $this->inflectors;
     }
 }

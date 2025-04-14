@@ -2,15 +2,13 @@
 
 include __DIR__ . '/../bootstrap.php';
 
-use Autodeal\Controllers\TestController;
+use Autodeal\Controllers\UsersController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use FastRoute\Dispatcher;
 
-$routes [] = [['GET'], '/test', [TestController::class, 'test']];
-$routes [] = [['GET'], '/test2', [TestController::class, 'test2']];
-$routes [] = [['GET'], '/test3', [TestController::class, 'test3']];
-$routes [] = [['GET'], '/test4', [TestController::class, 'show']];
+$routes [] = [['GET'], '/', [UsersController::class, 'show']];
+$routes [] = [['GET'], '/login', [UsersController::class, 'show']];
 
 $request = Request::createFromGlobals();
 

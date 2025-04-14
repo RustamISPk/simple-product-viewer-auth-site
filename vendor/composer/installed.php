@@ -49,7 +49,7 @@
         'league/container' => array(
             'pretty_version' => '3.4.1',
             'version' => '3.4.1.0',
-            'reference' => '65fce07081969321195290d9439535e010588b4b',
+            'reference' => '84ecbc2dbecc31bd23faf759a0e329ee49abddbd',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/container',
             'aliases' => array(),
@@ -122,9 +122,9 @@
             ),
         ),
         'psr/container' => array(
-            'pretty_version' => '2.0.2',
-            'version' => '2.0.2.0',
-            'reference' => 'c71ecc56dfe541dbd90c5360474fbc405f8d5963',
+            'pretty_version' => '1.1.2',
+            'version' => '1.1.2.0',
+            'reference' => '513e0666f7216c7459170d56df27dfcefe1689ea',
             'type' => 'library',
             'install_path' => __DIR__ . '/../psr/container',
             'aliases' => array(),
@@ -207,25 +207,25 @@
         'symfony/asset' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/asset-mapper' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/browser-kit' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/cache' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/cache-contracts' => array(
@@ -243,19 +243,19 @@
         'symfony/clock' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/config' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/console' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/contracts' => array(
@@ -270,13 +270,13 @@
         'symfony/css-selector' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/debug-bundle' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/debug-pack' => array(
@@ -291,7 +291,7 @@
         'symfony/dependency-injection' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/deprecation-contracts' => array(
@@ -303,37 +303,37 @@
         'symfony/doctrine-bridge' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/dom-crawler' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/dotenv' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/emoji' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/error-handler' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/event-dispatcher' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/event-dispatcher-contracts' => array(
@@ -351,37 +351,37 @@
         'symfony/expression-language' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/filesystem' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/finder' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/form' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/framework-bundle' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/http-client' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/http-client-contracts' => array(
@@ -399,55 +399,55 @@
         'symfony/http-foundation' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/http-kernel' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/intl' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/ldap' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/lock' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/mailer' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/messenger' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/mime' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/monolog-bridge' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/monolog-bundle' => array(
@@ -462,19 +462,19 @@
         'symfony/notifier' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/options-resolver' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/password-hasher' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/polyfill-ctype' => array(
@@ -531,15 +531,6 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
-        'symfony/polyfill-php81' => array(
-            'pretty_version' => 'v1.31.0',
-            'version' => '1.31.0.0',
-            'reference' => '4a4cfc2d253c21a5ad0e53071df248ed48c6ce5c',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../symfony/polyfill-php81',
-            'aliases' => array(),
-            'dev_requirement' => true,
-        ),
         'symfony/polyfill-php83' => array(
             'pretty_version' => 'v1.31.0',
             'version' => '1.31.0.0',
@@ -561,7 +552,7 @@
         'symfony/process' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/profiler-pack' => array(
@@ -576,73 +567,73 @@
         'symfony/property-access' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/property-info' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/rate-limiter' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/remote-event' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/routing' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/scheduler' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/security-bundle' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/security-core' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/security-csrf' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/security-http' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/semaphore' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/serializer' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/service-contracts' => array(
@@ -660,19 +651,19 @@
         'symfony/stopwatch' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/string' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/symfony' => array(
-            'pretty_version' => 'v7.2.3',
-            'version' => '7.2.3.0',
-            'reference' => '872341eab3e743f18bdb61e42ced78ca03cc7aca',
+            'pretty_version' => 'v7.2.5',
+            'version' => '7.2.5.0',
+            'reference' => 'f6385e959096abc9aa1d40866c03ffea1ee738e1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/symfony',
             'aliases' => array(),
@@ -681,7 +672,7 @@
         'symfony/translation' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/translation-contracts' => array(
@@ -699,79 +690,79 @@
         'symfony/twig-bridge' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/twig-bundle' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/type-info' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/uid' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/validator' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/var-dumper' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/var-exporter' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/web-link' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/web-profiler-bundle' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/webhook' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/workflow' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'symfony/yaml' => array(
             'dev_requirement' => true,
             'replaced' => array(
-                0 => 'v7.2.3',
+                0 => 'v7.2.5',
             ),
         ),
         'twig/twig' => array(
-            'pretty_version' => 'v3.19.0',
-            'version' => '3.19.0.0',
-            'reference' => 'd4f8c2b86374f08efc859323dbcd95c590f7124e',
+            'pretty_version' => 'v3.20.0',
+            'version' => '3.20.0.0',
+            'reference' => '3468920399451a384bef53cf7996965f7cd40183',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twig/twig',
             'aliases' => array(),
