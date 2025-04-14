@@ -9,6 +9,7 @@ class SignUpRender extends AbstractRender
     protected string $template = 'sign_in.twig';
     public function __construct()
     {
-        parent::__construct();
+        $path = BASE_DIR . '/src/Presentation/templates/SignIn'; // полный путь к папке
+        parent::__construct($path);
     }
 }

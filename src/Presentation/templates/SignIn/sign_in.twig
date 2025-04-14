@@ -1,5 +1,5 @@
 {% extends 'base.twig' %}
-{% block content %}
+{% block body %}
 <script>
     if (localStorage.getItem('sidebar-expanded') == 'true') {
         document.querySelector('body').classList.add('sidebar-expanded');
@@ -87,4 +87,4 @@
     </div>
 
 </main>
-{% endblock content %}
+{% endblock body %}

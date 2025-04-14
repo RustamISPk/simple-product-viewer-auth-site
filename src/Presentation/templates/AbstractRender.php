@@ -23,8 +23,13 @@ abstract class AbstractRender
 
     protected $twig;
 
-    public function __construct() {
-        $this->twig = new Environment(new FilesystemLoader($this->path));
+    public function __construct(string $path = null)
+    {
+        if ($path !== null) {
+            $this->path = $path;
+        }
+        $this->twig = new Environment(new FilesystemLoader([$this->getPath(), $this->getPath().'/../']));
+
     }
     /**
      * @throws SyntaxError
