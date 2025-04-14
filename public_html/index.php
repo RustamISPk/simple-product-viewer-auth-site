@@ -2,7 +2,7 @@
 
 include __DIR__ . '/../bootstrap.php';
 
-use Autodeal\Controllers\UsersController;
+use ProductViewer\Controllers\UsersController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use FastRoute\Dispatcher;

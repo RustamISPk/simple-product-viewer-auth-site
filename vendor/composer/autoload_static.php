@@ -58,6 +58,7 @@ class ComposerStaticInit605edf7431a0eed3331cd641d645ff42
             'Psr\\Container\\' => 14,
             'Psr\\Clock\\' => 10,
             'Psr\\Cache\\' => 10,
+            'ProductViewer\\' => 14,
         ),
         'M' => 
         array (
@@ -79,10 +80,6 @@ class ComposerStaticInit605edf7431a0eed3331cd641d645ff42
         'C' => 
         array (
             'Composer\\Semver\\' => 16,
-        ),
-        'A' => 
-        array (
-            'Autodeal\\' => 9,
         ),
     );
 
@@ -187,6 +184,10 @@ class ComposerStaticInit605edf7431a0eed3331cd641d645ff42
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'ProductViewer\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -210,10 +211,6 @@ class ComposerStaticInit605edf7431a0eed3331cd641d645ff42
         'Composer\\Semver\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/semver/src',
-        ),
-        'Autodeal\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

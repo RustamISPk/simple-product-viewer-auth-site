@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => 'autodeal/database',
+        'name' => 'product-viewer/reg-auth-forms',
         'pretty_version' => '1.0.0+no-version-set',
         'version' => '1.0.0.0',
         'reference' => null,
@@ -10,15 +10,6 @@
         'dev' => true,
     ),
     'versions' => array(
-        'autodeal/database' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'composer/semver' => array(
             'pretty_version' => '3.4.3',
             'version' => '3.4.3.0',
@@ -90,6 +81,15 @@
             'provided' => array(
                 0 => '*',
             ),
+        ),
+        'product-viewer/reg-auth-forms' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'psr/cache' => array(
             'pretty_version' => '3.0.0',

@@ -1,6 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace Autodeal\Models;
+namespace ProductViewer\Models;
 
 class RegModel
 {

@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace Autodeal\Presentation\templates\SignIn;
+namespace ProductViewer\Presentation\templates\SignIn;
 
-use Autodeal\Presentation\templates\AbstractRender;
+use ProductViewer\Presentation\templates\AbstractRender;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 

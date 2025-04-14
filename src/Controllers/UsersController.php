@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace Autodeal\Controllers;
+namespace ProductViewer\Controllers;
 
-use Autodeal\Presentation\templates\SignIn\SignInRender;
-use Autodeal\Presentation\templates\SignUp\SignUpRender;
-use Autodeal\Repositories\UsersRepository;
+use ProductViewer\Presentation\templates\SignIn\SignInRender;
+use ProductViewer\Presentation\templates\SignUp\SignUpRender;
+use ProductViewer\Repositories\UsersRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

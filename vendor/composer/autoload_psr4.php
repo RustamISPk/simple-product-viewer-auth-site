@@ -31,11 +31,11 @@ return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Clock\\' => array($vendorDir . '/psr/clock/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
+    'ProductViewer\\' => array($baseDir . '/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Container\\' => array($vendorDir . '/league/container/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
     'Doctrine\\Persistence\\' => array($vendorDir . '/doctrine/persistence/src/Persistence'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/event-manager/src'),
     'Composer\\Semver\\' => array($vendorDir . '/composer/semver/src'),
-    'Autodeal\\' => array($baseDir . '/src'),
 );
